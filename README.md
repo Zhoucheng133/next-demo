@@ -2,6 +2,6 @@
 
 - Next
 - Tailwind CSS
-- NextUI
+- [NextUI](https://nextui.org/docs/guide/introduction)
 - Recoil状态管理器
-- ElysiaJS
+- [ElysiaJS](https://elysiajs.com/)
