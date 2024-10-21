@@ -2,10 +2,8 @@ import { numStore } from "@/stores/default";
 import {Button, ButtonGroup} from "@nextui-org/react";
 import { useRecoilState } from "recoil";
 
-export default function Switcher(){
-
+const useNum=()=>{
   const [num, setNum]=useRecoilState(numStore);
-
   const add=()=>{
     setNum(num+1);
   }
@@ -14,10 +12,17 @@ export default function Switcher(){
     setNum(num-1);
   }
 
+  return {add, minus}
+}
+
+export default function Switcher(){
+
+  const num=useNum();
+
   return <div>
     <ButtonGroup>
-      <Button onClick={()=>minus()}>Minus</Button>
-      <Button onClick={()=>add()}>Add</Button>
+      <Button onClick={()=>num.minus()}>Minus</Button>
+      <Button onClick={()=>num.add()}>Add</Button>
     </ButtonGroup>
   </div>
 }
